@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Layer - Desenvolvimento Web & Mobile de Elite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/globais.css">
+    <link rel="stylesheet" href="css/botoes.css">
+    <link rel="icon" type="image/x-icon" href="assets/icon.png">
+</head>
+<body>
+
+    <header class="header anim-entrada">
+        <div class="container header-content">
+            <a href="index.html" class="logo logo-premium"><img src="assets/logo retangular.png" alt="Next Layer"></a>
+            <nav class="menu menu-direita">
+                <a href="index.html" class="active">Início</a>
+                <a href="catalogo.html">Catálogo</a>
+                <a href="orcamento.html">Solicitar Orçamento</a>
+                <button class="btn btn-outline btn-sm" id="btn-contato-header">Contato</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero container anim-entrada-atraso-1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 80px; min-height: 70vh;">
+            
+            <div class="hero-texto">
+                <span class="badge badge-tech">Transformando Ideias em Realidade Digital</span>
+                <h1 style="font-size: 3.8rem; line-height: 1.1; margin-bottom: 20px; color: var(--cor-texto);">
+                    Design e desenvolvimento que <br><span class="destaque-azul">impulsionam</span> seu negócio
+                </h1>
+                <p style="color: var(--cor-texto-mutado); font-size: 1.1rem; margin-bottom: 30px; max-width: 95%;">
+                    Somos a Next Layer — criamos sites, aplicativos, landing pages e lojas com foco em conversão, performance e imagem profissional.
+                </p>
+                
+                <div style="display: flex; gap: 15px; margin-bottom: 40px;">
+                    <a href="catalogo.html" class="btn btn-primary">Ver modelos</a>
+                    <a href="orcamento.html" class="btn btn-outline">Solicitar Orçamento</a>
+                </div>
+
+              <div class="tech-carousel-3d-container">
+                    <div class="tech-carousel-3d-scene">
+                        <div class="tech-carousel-3d-ring">
+                            <div class="tech-item item-1"><i class="fa-brands fa-html5" title="HTML5"></i></div>
+                            <div class="tech-item item-2"><i class="fa-brands fa-css3-alt" title="CSS3"></i></div>
+                            <div class="tech-item item-3"><i class="fa-brands fa-js" title="JavaScript"></i></div>
+                            <div class="tech-item item-4"><i class="fa-brands fa-node-js" title="Node.js"></i></div>
+                            <div class="tech-item item-5"><i class="fa-brands fa-react" title="React"></i></div>
+                            <div class="tech-item item-6"><i class="fa-brands fa-angular" title="Angular"></i></div>
+                            <div class="tech-item item-7"><i class="fa-brands fa-python" title="Python"></i></div>
+                            <div class="tech-item item-8"><i class="fa-brands fa-java" title="Java"></i></div>
+                            <div class="tech-item item-9"><span title="C">C</span></div>
+                            <div class="tech-item item-10"><span title="C#">C#</span></div>
+                            <div class="tech-item item-11"><span title=".NET">.NET</span></div>
+                            <div class="tech-item item-12"><i class="fa-brands fa-php" title="PHP"></i></div>
+                            <div class="tech-item item-13"><i class="fa-solid fa-database" title="SGBD"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           <div class="hero-visual" style="position: relative; width: 100%; height: 550px; display: flex; justify-content: center; align-items: center;">
+                <canvas id="esfera-3d" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120%; height: 120%; z-index: 1; pointer-events: auto;"></canvas>
+                <img src="assets/robo_2-removebg-preview.png" alt="Mascote Next Layer" class="robo-img" style="position: relative; z-index: 2; max-width: 60%; margin: 0 auto; animation: flutuar 4s ease-in-out infinite; pointer-events: none;">
+            </div>
+        </section>
+
+        <section class="stats container anim-entrada-atraso-2" style="display: flex; justify-content: space-around; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; margin-bottom: 80px;">
+            <div class="stat-item">
+                <h2 id="stat-entregues" class="shuffling-number destaque-azul" style="font-size: 3.5rem; margin-bottom: -5px;" data-final="0">0</h2>
+                <p style="color: var(--cor-texto-mutado);">Projetos Entregues</p>
+            </div>
+            <div class="stat-item">
+                <h2 id="stat-satisfacao" class="shuffling-number destaque-azul" style="font-size: 3.5rem; margin-bottom: -5px;" data-final="0">0</h2>
+                <p style="color: var(--cor-texto-mutado);">Satisfação (%)</p>
+            </div>
+            <div class="stat-item">
+                <h2 id="stat-anos" class="shuffling-number destaque-azul" style="font-size: 3.5rem; margin-bottom: -5px;" data-final="0">0</h2>
+                <p style="color: var(--cor-texto-mutado);">Anos de Experiência</p>
+            </div>
+        </section>
+
+        <section class="services container anim-entrada-atraso-3">
+            <div class="services-header">
+                <span class="badge">Nossa Expertise</span>
+                <h2>O que <span class="destaque-azul">Dominamos</span></h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card glow-card"><div class="service-icon">🌐</div><h3>Desenvolvimento Web</h3><p>Sistemas robustos, e-commerces e landing pages focadas em conversão.</p></div>
+                <div class="service-card glow-card"><div class="service-icon">📱</div><h3>Aplicativos Mobile</h3><p>Apps nativos e híbridos para iOS e Android com UX intuitiva.</p></div>
+                <div class="service-card glow-card"><div class="service-icon">☁️</div><h3>Infraestrutura & Nuvem</h3><p>Arquitetura, escalabilidade e gerenciamento em Cloud.</p></div>
+                <div class="service-card glow-card"><div class="service-icon">🔒</div><h3>Segurança Digital</h3><p>Auditorias, criptografia e proteção contra ataques.</p></div>
+                <div class="service-card glow-card"><div class="service-icon">🗄️</div><h3>Banco de Dados</h3><p>Modelagem relacional e NoSQL eficiente.</p></div>
+                <div class="service-card glow-card"><div class="service-icon">💡</div><h3>Consultoria Técnica</h3><p>Mentoria para startups e definição de stack tecnológica.</p></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <img src="assets/logo retangular.png" alt="Next Layer" class="footer-logo">
+                <p>Soluções digitais com foco em performance e design moderno.</p>
+            </div>
+            <div class="link-group">
+                <h3>Navegação</h3>
+                <a href="index.html">Início</a>
+                <a href="catalogo.html">Catálogo</a>
+                <a href="orcamento.html">Solicitar Orçamento</a>
+            </div>
+            <div class="link-group">
+                <h3>Fale Conosco</h3>
+                <a href="https://wa.me/5561995103430?text=Olá!%20Gostaria%20de%20falar%20com%20a%20nextlayer" target="_blank">WhatsApp</a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nextlayerempresarial@gmail.com&su=Contato%20pelo%20Site">E-mail</a>
+                <a href="https://www.instagram.com/nextlayeragencia" target="_blank">Instagram</a>
+            </div>
+            <div class="link-group">
+                <h3>Políticas e FAQ</h3>
+                <a href="politica.html">Política de Privacidade</a>
+                <a href="perguntas.html">Perguntas Frequentes</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Nextlayer. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item active">
+            <i class="fa-solid fa-house"></i><span>Início</span>
+        </a>
+        
+        <a href="catalogo.html" class="nav-item"> 
+            <i class="fa-solid fa-folder-open"></i><span>Catálogo</span>
+        </a>
+        
+        <a href="orcamento.html" class="nav-item">
+            <i class="fa-solid fa-file-invoice-dollar"></i><span>Orçamento</span>
+        </a>
+        
+        <a href="#" class="nav-item" id="btn-contato-mobile">
+            <i class="fa-solid fa-comment-dots"></i><span>Contato</span>
+        </a>
+    </nav>
+
+    <div id="modal-contato" class="modal-overlay modal-contato" style="display: none;">
+        <div class="modal-content anim-entrada">
+            <div class="modal-header">
+                <h3>Entre em Contato</h3>
+                <button id="btn-fechar-modal-contato" class="btn-fechar">&times;</button>
+            </div>
+            <div class="modal-body">
+                <a href="https://wa.me/5561995103430?text=Olá!%20Gostaria%20de%20falar%20com%20a%20nextlayer" target="_blank" class="btn-contato-vertical">
+                    <i class="fa-brands fa-whatsapp icon-whatsapp"></i> Chamar no WhatsApp
+                </a>
+                <a href="https://www.instagram.com/nextlayeragencia" target="_blank" class="btn-contato-vertical">
+                    <i class="fa-brands fa-instagram icon-instagram"></i> Seguir no Instagram
+                </a>
+                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nextlayerempresarial@gmail.com&su=Contato%20pelo%20Site" class="btn-contato-vertical">
+                    <i class="fa-solid fa-envelope icon-email"></i> Enviar E-mail
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/supabase.js"></script>
+    <script type="module" src="js/index.js"></script> <script src="js/globais.js"></script> 
+</body>
+</html>

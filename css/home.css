@@ -1,0 +1,156 @@
+/* =========================================
+   SEÇÃO HERO (PÁGINA INICIAL)
+========================================= */
+.hero {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+    z-index: 2; /* Fica acima do canvas se sobrepor */
+}
+
+.badge {
+    display: inline-block;
+    background-color: rgba(29, 78, 216, 0.1);
+    color: var(--cor-primaria-hover);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: 1px solid rgba(29, 78, 216, 0.3);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: var(--cor-texto);
+}
+
+.destaque-azul {
+    color: var(--cor-primaria);
+}
+
+.hero-content p {
+    color: var(--cor-texto-mutado);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    max-width: 90%;
+}
+
+/* Linguagens (Tech Stack) */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.tech-tag {
+    background-color: var(--cor-fundo-secundario);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+/* Botões do Hero */
+.hero-botoes {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--cor-texto);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* O Visual Direito (Robô + 3D) */
+.hero-visual {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+}
+
+.robo-img {
+    position: relative;
+    z-index: 2;
+    max-width: 100%;
+    height: auto;
+    animation: flutuar 4s ease-in-out infinite; 
+    pointer-events: none; /* A MÁGICA AQUI: O mouse "atravessa" a imagem */
+}
+
+/* O Canvas do Efeito 3D */
+#esfera-3d {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Fica atrás do robô */
+    width: 120%;
+    height: 120%;
+    pointer-events: auto;
+}
+
+@keyframes flutuar {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* =========================================
+   SEÇÃO DE ESTATÍSTICAS
+========================================= */
+.estatisticas {
+    padding: 40px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: var(--cor-fundo-secundario);
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.stat-item  {
+    text-align: center;
+}
+
+.stat-item h2 {
+    font-size: 3rem;
+    color: var(--cor-primaria);
+    margin-bottom: 5px;
+}
+
+.stat-item p {
+    color: var(--cor-texto-mutado);
+    font-size: 0.95rem;
+    font-weight: 500;
+}

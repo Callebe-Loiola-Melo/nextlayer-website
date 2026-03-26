@@ -1,0 +1,106 @@
+/* Layout da Página de Orçamento */
+.page-orcamento {
+    padding: 60px 20px;
+    max-width: 900px;
+}
+
+.orcamento-header {
+    margin-bottom: 40px;
+}
+
+.orcamento-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.orcamento-header p {
+    color: var(--cor-texto-mutado);
+    font-size: 1.1rem;
+}
+
+/* O "Cartão" do Formulário */
+.form-container {
+    background-color: var(--cor-fundo-secundario);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 50px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.form-row .input-group {
+    flex: 1;
+    min-width: 200px; /* Para quebrar a linha no celular */
+}
+
+.input-group {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--cor-texto);
+}
+
+/* Estilo dos Inputs e Textarea */
+.input-group input,
+.input-group textarea {
+    background-color: #03050A; /* Fundo mais escuro que o card */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 14px;
+    border-radius: 8px;
+    color: var(--cor-texto);
+    font-family: var(--fonte-principal);
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: #4B5563;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.2);
+}
+
+/* Ajustes no botão */
+.btn-enviar {
+    width: auto;
+    padding: 14px 30px;
+    margin-top: 10px;
+}
+
+/* Dicas de Envio */
+.dicas-envio {
+    padding-top: 20px;
+}
+
+.dicas-envio h3 {
+    color: #38BDF8; /* Azul claro estilo link */
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.dicas-envio ul {
+    list-style-position: inside;
+}
+
+.dicas-envio li {
+    list-style-type: disc;
+    color: var(--cor-texto-mutado);
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}

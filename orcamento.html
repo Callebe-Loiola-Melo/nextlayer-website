@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Orçamento - Next Layer</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/globais.css">
+    <link rel="stylesheet" href="css/botoes.css">
+    <link rel="stylesheet" href="css/formularios.css"> </head>
+    <link rel="icon" type="image/x-icon" href="assets/icon.png">
+<body>
+
+    <header class="header anim-entrada">
+        <div class="container header-content">
+            <a href="index.html" class="logo logo-premium">
+                <img src="assets/logo retangular.png" alt="Next Layer Logo">
+            </a>
+            
+            <nav class="menu menu-direita">
+                <a href="index.html">Início</a>
+                <a href="catalogo.html">Catálogo</a> <a href="orcamento.html">Solicitar Orçamento</a>
+                <button class="btn btn-outline btn-sm" id="btn-contato-header">Contato</button>
+            </nav>
+        </div>
+    </header>
+    <main class="container page-orcamento">
+        <div class="orcamento-header">
+            <h1>Solicitar Orçamento do site</h1>
+            <p>Preencha o formulário abaixo com o máximo de detalhes possível. Vamos analisar e responder com a proposta.</p>
+        </div>
+
+        <div class="form-container">
+            <form id="form-orcamento">
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" placeholder="Seu nome completo" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="empresa">Empresa (opcional)</label>
+                        <input type="text" id="empresa" placeholder="Nome da sua empresa">
+                    </div>
+                    <div class="input-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="seu-email@dominio.com" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="telefone">Telefone (com DDD)</label>
+                    <input type="tel" id="telefone" placeholder="(11) 99999-9999" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="descricao">Descreva seu projeto</label>
+                    <textarea id="descricao" rows="5" placeholder="Exemplo: Quero um site que possua 3 páginas (Início, Sobre, Contato), com as cores preto e dourado..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-enviar" id="btn-submit">
+                    Enviar Pedido de Orçamento
+                </button>
+            </form>
+        </div>
+
+        <div class="dicas-envio">
+            <h3>Dicas para enviar</h3>
+            <ul>
+                <li>Se precisar de alguma ideia ou inspiração temos um catálogo com sites que já fizemos.</li>
+                <li>Inclua referências visuais (sites que gosta).</li>
+                <li>Defina prazos e orçamento aproximado.</li>
+                <li>Indique funcionalidades essenciais (ex: carrinho, formulário, agendamento).</li>
+            </ul>
+        </div>
+    </main>
+
+   <footer class="footer">
+         <div class="container footer-content">
+            
+            <div class="footer-info">
+                <img src="assets/logo retangular.png" alt="Next Layer" class="footer-logo">
+                <p>Soluções digitais com foco em performance e design moderno.</p>
+            </div>
+            
+            <div class="link-group">
+                <h3>Navegação</h3>
+                <a href="index.html">Início</a>
+                <a href="catalogo.html">Catálogo</a>
+                <a href="orcamento.html">Solicitar Orçamento</a>
+            </div>
+            
+            <div class="link-group">
+                <h3>Fale Conosco</h3>
+                <a href="https://wa.me/5561995103430?text=Olá!%20Gostaria%20de%20falar%20com%20a%20nextlayer" target="_blank">WhatsApp</a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nextlayerempresarial@gmail.com&su=Contato%20pelo%20Site">E-mail</a>
+                <a href="https://www.instagram.com/nextlayeragencia" target="_blank">Instagram</a>
+            </div>
+            
+            <div class="link-group">
+                <h3>Políticas e FAQ</h3>
+                <a href="politica.html">Política de Privacidade</a>
+                <a href="perguntas.html">Perguntas Frequentes</a>
+            </div>
+            
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2026 Nextlayer. Todos os direitos reservados.</p>
+             <a href="painel/login.html" class="admin-link">🔒 Painel ADM</a>
+        </div>
+    </footer>
+
+
+<div id="modal-sucesso" class="modal-overlay" style="display: none;">
+        <div class="modal-content anim-entrada" style="max-width: 450px; text-align: center;">
+            <div class="modal-body" style="padding: 40px 30px;">
+                
+                <div style="font-size: 4rem; color: #38BDF8; margin-bottom: 20px;">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                
+                <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: #fff;">Orçamento Recebido!</h3>
+                
+                <p style="color: var(--cor-texto-mutado); font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;">
+                    Sua solicitação foi enviada com sucesso para nossa equipe. Um de nossos especialistas analisará os dados e entrará em contato com você em <strong>até 24 horas</strong>. <br><br>Fique atento ao seu WhatsApp e E-mail!
+                </p>
+                
+                <div id="countdown-container" style="background: rgba(56, 189, 248, 0.1); padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                    <span style="color: #38BDF8; font-weight: 600; font-size: 0.9rem;">
+                        <i class="fa-solid fa-clock"></i> Por favor, aguarde <span id="segundos-restantes">10</span> segundos...
+                    </span>
+                </div>
+
+                <button id="btn-fechar-sucesso" class="btn btn-primary" style="width: 100%; display: none; margin-top: 10px;">
+                    Entendido!!
+                </button>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <i class="fa-solid fa-house"></i><span>Início</span>
+        </a>
+        
+        <a href="catalogo.html" class="nav-item"> 
+            <i class="fa-solid fa-folder-open"></i><span>Catálogo</span>
+        </a>
+        
+        <a href="orcamento.html" class="nav-item active">
+            <i class="fa-solid fa-file-invoice-dollar"></i><span>Orçamento</span>
+        </a>
+        
+        <a href="#" class="nav-item" id="btn-contato-mobile">
+            <i class="fa-solid fa-comment-dots"></i><span>Contato</span>
+        </a>
+    </nav>
+
+
+  <div id="modal-contato" class="modal-overlay modal-contato" style="display: none;">
+        <div class="modal-content anim-entrada">
+            <div class="modal-header">
+                <h3>Entre em Contato</h3>
+                <button id="btn-fechar-modal-contato" class="btn-fechar">&times;</button>
+            </div>
+           <div class="modal-body">
+                
+                <a href="https://wa.me/5561995103430?text=Olá!%20Gostaria%20de%20falar%20com%20a%20nextlayer" target="_blank" class="btn-contato-vertical">
+                    <i class="fa-brands fa-whatsapp icon-whatsapp"></i> Chamar no WhatsApp
+                </a>
+                
+                <a href="https://www.instagram.com/nextlayeragencia" target="_blank" class="btn-contato-vertical">
+                    <i class="fa-brands fa-instagram icon-instagram"></i> Seguir no Instagram
+                </a>
+                 
+                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nextlayerempresarial@gmail.com&su=Contato%20pelo%20Site" class="btn-contato-vertical">
+                    <i class="fa-solid fa-envelope icon-email"></i> Enviar E-mail
+                </a>
+               
+            </div>
+    </div>
+
+
+
+
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <script type="module" src="js/supabase.js"></script>
+    <script type="module" src="js/orcamento.js"></script>
+    <script src="js/globais.js"></script>
+
+</body>
+</html>

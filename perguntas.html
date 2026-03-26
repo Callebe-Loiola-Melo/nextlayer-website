@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perguntas Frequentes (FAQ) - Next Layer</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/globais.css">
+    <link rel="stylesheet" href="css/botoes.css">
+    <link rel="icon" type="image/x-icon" href="assets/icon.png">
+    
+    <style>
+        .page-faq { max-width: 800px; margin: 0 auto; padding: 60px 20px 100px; }
+        .faq-header { text-align: center; margin-bottom: 50px; }
+        .faq-header h1 { font-size: 3rem; margin-bottom: 15px; color: var(--cor-texto); }
+        .faq-header p { color: var(--cor-texto-mutado); font-size: 1.1rem; }
+        .faq-container { display: flex; flex-direction: column; gap: 15px; }
+        .faq-item { background-color: var(--cor-fundo-secundario); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 10px; overflow: hidden; transition: var(--transition-smooth); }
+        .faq-item:hover { border-color: rgba(56, 189, 248, 0.3); }
+        .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px; background: none; border: none; color: var(--cor-texto); font-size: 1.1rem; font-weight: 600; text-align: left; font-family: var(--fonte-principal); cursor: pointer; transition: var(--transition-smooth); }
+        .faq-question i { color: #38BDF8; font-size: 1.2rem; transition: transform 0.3s ease; }
+        .faq-item.active { border-color: var(--cor-primaria); box-shadow: 0 0 15px rgba(29, 78, 216, 0.15); }
+        .faq-item.active .faq-question { color: #38BDF8; }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; background-color: rgba(3, 5, 10, 0.3); }
+        .faq-answer p { padding: 0 20px 20px; margin: 0; color: var(--cor-texto-mutado); line-height: 1.7; font-size: 1rem; }
+        .destaque-suave { color: #fff; font-weight: 500; }
+        .faq-cta { text-align: center; margin-top: 50px; padding-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body>
+
+    <header class="header anim-entrada">
+        <div class="container header-content">
+            <a href="index.html" class="logo logo-premium"><img src="assets/logo retangular.png" alt="Next Layer Logo"></a>
+            <nav class="menu menu-direita">
+                <a href="index.html">Início</a>
+                <a href="catalogo.html">Catálogo</a>
+                <a href="orcamento.html">Solicitar Orçamento</a>
+                <button class="btn btn-outline btn-sm" id="btn-contato-header">Contato</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-faq anim-entrada-atraso-1">
+        <a href="index.html" class="btn-back">
+            <i class="fa-solid fa-arrow-left"></i> Voltar
+        </a>
+
+        <div class="faq-header">
+            <span class="badge">Tire suas Dúvidas</span>
+            <h1>Perguntas <span class="destaque-azul">Frequentes</span></h1>
+            <p>Tudo o que você precisa saber antes de dar o próximo passo digital da sua empresa.</p>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">Quanto tempo leva para o meu site ficar pronto? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>O prazo varia de acordo com a complexidade do projeto. Landing pages e sites institucionais mais diretos costumam levar de <span class="destaque-suave">7 a 15 dias</span>. Já plataformas mais robustas, como e-commerces, sistemas ou portais, podem levar entre <span class="destaque-suave">30 e 60 dias</span>.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Eu preciso fornecer todo o conteúdo (textos e fotos)? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>Fica a seu critério! Você pode nos fornecer todo o material estruturado que já possui, ou a nossa equipe pode auxiliar na curadoria visual.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Como acompanho o desenvolvimento do projeto? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>Prezamos pela transparência total. Você terá acesso a um <span class="destaque-suave">link de homologação exclusivo</span> (um ambiente de testes) para acompanhar a evolução do seu site em tempo real.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Quanto custa a criação de um site? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>Como desenvolvemos projetos sob medida, o investimento depende inteiramente das funcionalidades que o seu negócio exige. Convidamos você a <a href="orcamento.html" style="color: #38BDF8; text-decoration: underline;">solicitar um orçamento personalizado</a>.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Vocês fazem integração com redes sociais e WhatsApp? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>Sim! Instalamos botões flutuantes de WhatsApp para contato em 1-clique, conectamos seus perfis de redes sociais e configuramos os Pixels de Rastreamento (Meta/Google).</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Vou conseguir medir quantas pessoas acessam meu site? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>Com certeza. Além da integração padrão com o Google Analytics, nós desenvolvemos sistemas de métricas construídos diretamente no código da sua aplicação para visualização em seu <span class="destaque-suave">Painel de Administrador exclusivo</span>.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">O site já vem pronto para anunciar no Google Ads e Meta Ads? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>Sim. Entregamos a plataforma pronta e com todas as tags de conversão instaladas para você rodar campanhas de tráfego pago com máxima eficiência.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">O site será meu ou ficarei "preso" a uma mensalidade eterna? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p><span class="destaque-suave">O site é 100% seu.</span> Não trabalhamos com modelos de "refém tecnológico".</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Vocês oferecem treinamento para eu mexer no site? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>Sim! No momento da entrega final do projeto, disponibilizamos um manual prático ou uma rápida videoaula.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">E se eu quiser adicionar uma nova funcionalidade no futuro? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>Nossos projetos possuem uma <span class="destaque-suave">arquitetura escalável</span>. Essa nova funcionalidade será desenvolvida sob medida, mediante um orçamento adicional referente apenas ao que for implementado.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-cta">
+             <h1>Fale <span class="destaque-azul">Conosco</span></h1>
+            <h3 style="margin-bottom: 15px;">Não encontrou sua dúvida?</h3>
+            <p style="color: var(--cor-texto-mutado); margin-bottom: 30px;">Nossa equipe está à disposição para tirar qualquer dúvida diretamente pelo WhatsApp ou E-mail.</p>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
+                <a href="https://wa.me/5561995103430" target="_blank" class="btn btn-primary" style="width: 280px; justify-content: center;">
+                    <i class="fa-brands fa-whatsapp" style="margin-right: 10px; font-size: 1.2rem;"></i>WhatsApp
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nextlayerempresarial@gmail.com&su=Contato%20pelo%20Site" target="_blank" class="btn btn-outline" style="width: 280px; justify-content: center;">
+                    <i class="fa-solid fa-envelope" style="margin-right: 10px; font-size: 1.2rem;"></i> E-mail
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <img src="assets/logo retangular.png" alt="Next Layer" class="footer-logo">
+                <p>Soluções digitais com foco em performance e design moderno.</p>
+            </div>
+            <div class="link-group">
+                <h3>Navegação</h3>
+                <a href="index.html">Início</a>
+                <a href="catalogo.html">Catálogo</a>
+                <a href="orcamento.html">Solicitar Orçamento</a>
+            </div>
+            <div class="link-group">
+                <h3>Fale Conosco</h3>
+                <a href="https://wa.me/5561995103430" target="_blank">WhatsApp</a>
+                <a href="mailto:nextlayerempresarial@gmail.com">E-mail</a>
+                <a href="https://instagram.com/nextlayeragencia" target="_blank">Instagram</a>
+            </div>
+            <div class="link-group">
+                <h3>Políticas e FAQ</h3>
+                <a href="politica.html">Política de Privacidade</a>
+                <a href="perguntas.html">Perguntas Frequentes</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Nextlayer. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+  <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <i class="fa-solid fa-house"></i><span>Início</span>
+        </a>
+        
+        <a href="catalogo.html" class="nav-item"> 
+            <i class="fa-solid fa-folder-open"></i><span>Catálogo</span>
+        </a>
+        
+        <a href="orcamento.html" class="nav-item">
+            <i class="fa-solid fa-file-invoice-dollar"></i><span>Orçamento</span>
+        </a>
+        
+        <a href="#" class="nav-item" id="btn-contato-mobile">
+            <i class="fa-solid fa-comment-dots"></i><span>Contato</span>
+        </a>
+    </nav>
+
+
+    <div id="modal-contato" class="modal-overlay modal-contato" style="display: none;">
+        <div class="modal-content anim-entrada">
+            <div class="modal-header">
+                <h3>Entre em Contato</h3>
+                <button id="btn-fechar-modal-contato" class="btn-fechar">&times;</button>
+            </div>
+            <div class="modal-body">
+                <a href="https://wa.me/5561995103430" target="_blank" class="btn-contato-vertical">
+                    <i class="fa-brands fa-whatsapp icon-whatsapp"></i> Chamar no WhatsApp
+                </a>
+                <a href="https://instagram.com/nextlayeragencia" target="_blank" class="btn-contato-vertical">
+                    <i class="fa-brands fa-instagram icon-instagram"></i> Seguir no Instagram
+                </a>
+                <a href="mailto:nextlayerempresarial@gmail.com" class="btn-contato-vertical">
+                    <i class="fa-solid fa-envelope icon-email"></i> Enviar E-mail
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/supabase.js"></script>
+    <script src="js/globais.js"></script> 
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const currentItem = question.parentElement;
+                    const isActive = currentItem.classList.contains('active');
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('active');
+                        item.querySelector('.faq-answer').style.maxHeight = null;
+                    });
+                    if (!isActive) {
+                        currentItem.classList.add('active');
+                        const answer = currentItem.querySelector('.faq-answer');
+                        answer.style.maxHeight = answer.scrollHeight + "px"; 
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

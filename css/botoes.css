@@ -1,0 +1,45 @@
+/* ESTILO PADRÃO DE BOTÕES */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px; /* Bordas arredondadas (aumente para 30px se quiser estilo pílula) */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-decoration: none;
+}
+
+/* Botão Azul Principal */
+.btn-primary {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto);
+}
+
+.btn-primary:hover {
+    background-color: var(--cor-primaria-hover);
+    transform: translateY(-2px); /* Efeito de subir de leve ao passar o mouse */
+    box-shadow: 0 4px 15px rgba(29, 78, 216, 0.4); /* Sombra azul glow */
+}
+
+/* Ajuste específico para o botão do Header para ficar menorzinho */
+.btn-contato {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+}
+
+/* Botão Secundário (Outline) */
+.btn-outline {
+    background-color: transparent;
+    color: var(--cor-texto);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+    transform: translateY(-2px);
+}

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Next Layer</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/globais.css">
+    <link rel="stylesheet" href="../css/botoes.css">
+    <link rel="stylesheet" href="../css/painel.css">
+     <link rel="icon" type="image/x-icon" href="../assets/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dashboard-body">
+
+    <div class="mobile-admin-header">
+        <button id="btn-hamburger"><i class="fa-solid fa-bars"></i></button>
+        <img src="../assets/logo retangular.png" alt="Next Layer">
+        <div style="width: 24px;"></div> </div>
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="../assets/logo retangular.png" alt="Next Layer">
+        </div>
+        <nav class="sidebar-nav">
+            <button class="nav-btn active" data-target="secao-pedidos">📋 Pedidos de Orçamento</button>
+            <button class="nav-btn" data-target="secao-projetos">💻 Gerenciar Portfólio</button>
+            <button class="nav-btn" data-target="secao-home">⚙️ Estatísticas da Home</button>
+            <button class="nav-btn" data-target="secao-metricas">📊 Métricas Gerais</button>
+        </nav>
+        <button id="btn-logout" class="btn btn-outline btn-sair">Sair do Painel</button>
+    </aside>
+
+    <main class="dashboard-content">
+
+        <section id="secao-pedidos" class="painel-secao active">
+            <div class="secao-header flex-header">
+                <div>
+                    <h2>Pedidos Recebidos</h2>
+                    <p>Lista simplificada. Clique em Detalhes para ver mais.</p>
+                </div>
+                <div class="busca-container">
+                    <label>Buscar por Data:</label>
+                    <input type="date" id="busca-data" class="input-busca">
+                    <button id="btn-limpar-busca" class="btn btn-outline btn-sm">Limpar</button>
+                </div>
+            </div>
+            
+            <div class="table-container">
+                <table class="tabela-admin">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Nome</th>
+                            <th>Empresa</th>
+                            <th>Telefone</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-orcamentos-body">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="secao-projetos" class="painel-secao" style="display: none;">
+            <div class="secao-header">
+                <h2>Gerenciar Portfólio</h2>
+                <p>Adicione novos projetos ou clique nos existentes para editar.</p>
+            </div>
+            
+            <div class="painel-grid-2">
+                <div class="form-admin-container">
+                    <h3>Novo Projeto</h3>
+                    <form id="form-novo-projeto" style="margin-top: 20px;">
+                        <div class="input-group">
+                            <label>Título do Projeto</label>
+                            <input type="text" id="proj-titulo" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Descrição curta</label>
+                            <textarea id="proj-descricao" rows="3" required></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label>Linguagens (separadas por vírgula)</label>
+                            <input type="text" id="proj-linguagens" placeholder="Ex: React, Node, CSS" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Link do Projeto</label>
+                            <input type="url" id="proj-link" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Imagem do Projeto</label>
+                            <input type="file" id="proj-imagem" accept="image/*" required class="input-file">
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="btn-salvar-novo-projeto" style="width: 100%;">Salvar e Publicar</button>
+                    </form>
+                </div>
+
+                <div class="lista-lateral">
+                    <h3>Projetos Publicados</h3>
+                    <div id="lista-projetos-admin" class="itens-scroll">
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="secao-home" class="painel-secao" style="display: none;">
+            <div class="secao-header"><h2>Estatísticas da Home</h2></div>
+            <div class="painel-grid-2">
+                <div class="form-admin-container">
+                    <h3>Atualizar Valores</h3>
+                    <form id="form-stats" style="margin-top: 20px;">
+                        <div class="input-group"><label>Projetos Entregues</label><input type="number" id="stat-entregues" required></div>
+                        <div class="input-group"><label>Satisfação (%)</label><input type="number" id="stat-satisfacao-input" required></div>
+                        <div class="input-group"><label>Anos de Experiência</label><input type="number" id="stat-anos-input" required></div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Atualizar Estatísticas</button>
+                    </form>
+                </div>
+                <div class="lista-lateral painel-stats-atuais">
+                    <h3>Valores Atuais na Home</h3>
+                    <div class="stats-box">
+                        <p>Projetos: <strong id="show-entregues" class="destaque-azul">--</strong></p>
+                        <p>Satisfação: <strong id="show-satisfacao" class="destaque-azul">--</strong></p>
+                        <p>Anos XP: <strong id="show-anos" class="destaque-azul">--</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="secao-metricas" class="painel-secao" style="display: none;">
+            <div class="secao-header">
+                <h2>Métricas Gerais</h2>
+                <p>Resumo das atividades do seu site.</p>
+            </div>
+            
+            <div class="metricas-container">
+                <div class="metrica-card">
+                    <div class="metrica-icone">📈</div>
+                    <div class="metrica-info">
+                        <h3>Total de Pedidos</h3>
+                        <h2 id="metrica-pedidos">--</h2>
+                    </div>
+                </div>
+                <div class="metrica-card">
+                    <div class="metrica-icone">💻</div>
+                    <div class="metrica-info">
+                        <h3>Projetos no Portfólio</h3>
+                        <h2 id="metrica-projetos">--</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="graficos-container grafico-unico">
+                <div class="grafico-box" style="max-width: 500px; margin: 0 auto; width: 100%;">
+                    <h3 style="text-align: center;">Distribuição Geral</h3>
+                    <canvas id="graficoPizza" height="300"></canvas>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="modal-orcamento" class="modal-overlay" style="display: none;">
+        <div class="modal-content modal-lg">
+            <div class="modal-header">
+                <div>
+                    <h3 id="modal-nome" style="margin-bottom: 5px;">Nome do Cliente</h3>
+                    <span id="modal-badge-status" class="badge-status">Pendente</span>
+                </div>
+                <button id="btn-fechar-modal" class="btn-fechar">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-grid">
+                    <div><span class="dado-label">Data/Hora:</span> <span id="modal-data" class="dado-valor"></span></div>
+                    <div><span class="dado-label">Empresa:</span> <span id="modal-empresa" class="dado-valor"></span></div>
+                    <div><span class="dado-label">Telefone:</span> <span id="modal-telefone" class="dado-valor"></span></div>
+                    <div><span class="dado-label">E-mail:</span> <span id="modal-email" class="dado-valor"></span></div>
+                </div>
+                <div class="modal-descricao">
+                    <span class="dado-label">Descrição do Projeto:</span>
+                    <div class="caixa-texto-lida">
+                        <p id="modal-desc-texto"></p>
+                    </div>
+                </div>
+                
+                <div class="modal-controles" style="margin-top: 25px;">
+                    <input type="hidden" id="modal-id-pedido">
+                    <div class="input-group">
+                        <label>Alterar Status</label>
+                        <select id="modal-status" class="select-moderno" style="width: 100%;">
+                            <option value="Pendente">🔴 Pendente</option>
+                            <option value="Em Produção">🟡 Em Produção</option>
+                            <option value="Finalizado">🟢 Finalizado</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Dev Responsável</label>
+                        <input type="text" id="modal-dev" placeholder="Ex: Calebe" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="flex-wrap: wrap; gap: 10px;">
+                <button class="btn btn-outline" id="btn-excluir-pedido" style="color: #ef4444; border-color: #ef4444; flex: 1;">Excluir</button>
+                <button class="btn btn-primary" id="btn-salvar-modal" style="flex: 2;">Salvar Alterações</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-editar-projeto" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Editar Projeto</h3>
+                <button id="btn-fechar-modal-proj" class="btn-fechar">&times;</button>
+            </div>
+           <div class="modal-body">
+                <form id="form-editar-projeto">
+                    <input type="hidden" id="edit-proj-id">
+                    
+                    <div class="edit-proj-layout">
+                        <div class="edit-proj-fields">
+                            <div class="input-group">
+                                <label>Título</label>
+                                <input type="text" id="edit-proj-titulo" required style="width: 100%;">
+                            </div>
+                            <div class="input-group">
+                                <label>Descrição</label>
+                                <textarea id="edit-proj-descricao" rows="5" required style="width: 100%;"></textarea>
+                            </div>
+                            <div class="input-group">
+                                <label>Linguagens</label>
+                                <input type="text" id="edit-proj-linguagens" required style="width: 100%;">
+                            </div>
+                            <div class="input-group">
+                                <label>Link do Projeto</label>
+                                <input type="url" id="edit-proj-link" required style="width: 100%;">
+                            </div>
+                        </div>
+
+                        <div class="edit-proj-visual">
+                            <label>Imagem do Projeto</label>
+                            <div class="upload-container-edit" style="width: 100%;">
+                                <img id="edit-proj-preview" src="https://via.placeholder.com/150x150/03050A/1D4ED8?text=Next+Layer" alt="Preview" class="projeto-edit-thumb">
+                                
+                                <input type="file" id="edit-proj-imagem" accept="image/*" style="display: none;">
+                                <label for="edit-proj-imagem" class="btn btn-outline btn-upload-edit">
+                                    <span style="font-size: 1.1rem;">📷</span> Alterar Foto
+                                </label>
+                                <small style="color: #9CA3AF; text-align: center; display: block; margin-top: 10px;">Deixe vazio para manter a atual.</small>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer" style="flex-wrap: wrap; gap: 10px;">
+                <button class="btn btn-outline" id="btn-cancelar-edit" style="color: #9CA3AF; flex: 1;">Cancelar</button>
+                <button class="btn btn-primary" id="btn-salvar-edicao-proj" style="flex: 2;">Salvar Edição</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../js/supabase.js"></script>
+    <script type="module" src="../js/painel.js"></script>
+</body>
+</html>

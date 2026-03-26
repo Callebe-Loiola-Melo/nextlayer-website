@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login ADM - Next Layer</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/globais.css">
+    <link rel="stylesheet" href="../css/botoes.css">
+    <link rel="stylesheet" href="../css/painel.css"> 
+  <link rel="icon" type="image/x-icon" href="../assets/icon.png">
+</head>
+<body class="login-body">
+
+    <main class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <img src="../assets/logo retangular.png" alt="Next Layer Logo">
+                <h2>Acesso Restrito</h2>
+                <p>Insira suas credenciais para gerenciar o site.</p>
+            </div>
+
+            <form id="form-login">
+                <div class="input-group">
+                    <label for="email">E-mail do Administrador</label>
+                    <input type="email" id="email" placeholder="admin@nextlayer.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" placeholder="••••••••" required>
+                </div>
+
+                <p id="msg-erro" class="msg-erro" style="display: none;">E-mail ou senha incorretos.</p>
+
+                <button type="submit" class="btn btn-primary btn-login" id="btn-submit">
+                    Entrar no Painel
+                </button>
+            </form>
+
+            <a href="../index.html" class="link-voltar">← Voltar para o site</a>
+        </div>
+    </main>
+
+    <script type="module" src="../js/auth.js"></script>
+</body>
+</html>
